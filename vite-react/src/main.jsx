@@ -14,13 +14,15 @@ import App from "./App.jsx";
 // );
 //anotherElement is render like a object
 
+//const devName = "Mithu";
 // const reactElement = React.createElement(
 //   "a",
 //   {
 //     href: "https://google.com",
 //     target: "_blank",
 //   },
-//   "Click here for google"
+//   "Click here for google",
+//    devName
 // );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
