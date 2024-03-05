@@ -5,7 +5,7 @@ import services from "../appwrite/config";
 import { useSelector } from "react-redux";
 import { Button, Container } from "../component";
 
-function Post() {
+export default function Post() {
   const [post, setPost] = useState(null);
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -20,9 +20,7 @@ function Post() {
         if (post) setPost(post);
         else navigate("/");
       });
-    } else {
-      navigate("/");
-    }
+    } else navigate("/");
   }, [slug, navigate]);
 
   const deletePost = () => {
@@ -65,5 +63,3 @@ function Post() {
     </div>
   ) : null;
 }
-
-export default Post;

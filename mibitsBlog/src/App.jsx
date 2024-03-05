@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Outlet } from "react-router-dom"
-
-import { login, logout } from "./store/authSlice";
-import authService from "./appwrite/auth";
 import "./App.css";
-import { Footer, Header } from "./component";
+import authService from "./appwrite/auth";
+import { login, logout } from "./store/authSlice";
+import { Footer, Header } from "./component/index";
+import { Outlet } from "react-router-dom";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,15 +20,15 @@ function App() {
           dispatch(logout());
         }
       })
-      .finally(() => setIsLoading(false));
+      .finally(() => setLoading(false));
   }, []);
 
-  return !isLoading ? (
+  return !loading ? (
     <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
       <div className="w-full block">
         <Header />
         <main>
-          TODO: 
+          TODO: <Outlet />
         </main>
         <Footer />
       </div>
