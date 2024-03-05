@@ -3,7 +3,7 @@ import { Container, PostCard } from "../component";
 import services from "../appwrite/config";
 
 function Home() {
-  const [posts, setPosts] = useState(null);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     services.getPosts().then((posts) => {
@@ -20,7 +20,7 @@ function Home() {
           <div className="flex flex-wrap">
             <div className="p-2 w-full">
               <h1 className="text-2xl font-bold hover:text-gray-500">
-                Login to Read Post
+                Login to read posts
               </h1>
             </div>
           </div>
